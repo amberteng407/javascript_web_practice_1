@@ -1,0 +1,72 @@
+/* section.gallery>.col */
+section.gallery{
+    display: flex; justify-content: center;
+    padding: 40px 0px;
+}
+section.gallery>.col{
+    width: 450px; margin: 20px; 
+}
+section.gallery>.col>div:first-child{ 
+	margin-bottom:40px;
+}
+/* section.gallery>.col>.picture 注意階層是否有全部列出*/
+section.gallery>.col>.picture{
+    width: 100%;height: 500px;
+    text-align: center; color: #ffffff;
+    display:flex;align-items:center;
+}
+section.gallery>.col>.picture-1{
+    background-image: url(gallery-1.jpg);
+    background-size: cover;
+}
+section.gallery>.col>.picture-2{
+    background-image: url(gallery-2.jpg);
+    background-size: cover;
+}
+/* section.gallery>.col>.text */
+section.gallery>.col>.text{
+    box-sizing: border-box; /* 決定區塊尺寸：外加還是內縮 */
+    width: 100%;height: 300px;
+    text-align: center; color: #000000;
+    border: 4px solid #000000;
+    line-height: 0.9em;
+    display:flex;align-items:center;
+}
+/* section.gallery>.col>.block.words */
+section.gallery>.col>.block>.words{
+    width: 100%;
+}
+section.gallery>.col>.block>.words>.title{
+    font-family: "Dancing Script", cursive;
+    font-size: 2em; font-weight: bold;
+    margin-bottom: 30px;
+}
+section.gallery>.col>.block>.words>.story{
+    font-size: 1.5em; margin-bottom: 40px;
+}
+section.gallery>.col>.block>.words>.action>.btn{
+    font-size: 0.8em; color: #ffffff;
+    border: 1px solid #ffffff;
+    background-color: rgba(0, 0, 0, 0.3); /* 設定rgb加透明度 */
+    padding: 10px 20px; /* 上下寬度 左右寬度 */
+    transition:background-color 0.5s;
+    cursor: pointer;
+}
+section.gallery>.col>.block>.words>.action>.btn:hover{
+    background-color: rgba(0, 0, 0, 1);
+}
+/* 螢幕尺寸小於800像素時，套用以下設定 */
+@media (max-width:800px){
+	section.gallery{
+		flex-wrap:wrap; /* 內部元件換行 */
+	}
+	section.gallery>.col{
+		width:90%;margin:20px 0px; /* 手機螢幕上顯示較擠 */
+	}
+	section.gallery>.col:last-child{ /* 虛擬選擇器: 選擇第二個column */
+		display:flex;flex-direction:column-reverse;
+	}
+	section.gallery>.col:last-child>.picture{
+		margin-bottom:40px;
+	}
+}

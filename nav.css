@@ -1,0 +1,95 @@
+body{
+    /* 網頁預設margin為8px */
+    margin: 0px;
+    /* 整個網頁文字大小基本是20px */
+    font-size: 20px;
+    /* 整個網頁文字字型一致為arial, 後面為同分類字型, 如電腦不支援前項字型則會使用同分類字型 */
+    font-family: arial,helvetica,sans-serif;
+}
+/* nav */
+nav{
+    height: 900px;
+    background-image: url(bg.jpg);
+    /* cover 等比例且填滿標籤區塊 */
+    background-size: cover;
+    background-attachment: fixed; /* 背景圖固定，不跟滑鼠滾輪移動 */
+}
+/* 標籤選擇器 標籤名稱>.xxx 表示上下階層 */
+nav>.title{
+    text-align: center; font-size: 2em; /* 200%也可寫為 "2em"=兩倍 */
+    /* 使用google fonts網站上的字型 */
+    font-family: "Dancing Script", cursive;
+	padding:40px 0px;margin-bottom:80px;
+}
+/* nav>.menu */
+nav>.menu{
+    display: flex; justify-content: center; /* 對齊網頁中心 */
+    margin-bottom: 250px; /* 拉開menu和memo之間的間距 */
+}
+nav>.menu>.item{
+    font-size: 0.8em; margin: 0px 40px; /*第一個代表上下 第二個代表左右 */
+    color: #222222;
+	text-shadow: 0px 0px 5px #ffffff; /*x座標 y座標 擴散大小 顏色 */
+	transition: transform 0.5s; cursor: pointer; /* 監控選單中的transform變化做漸進式處理 */
+}
+nav>.menu>.item:hover{ /* 虛擬選擇器: 游標經過的設定處理 */
+	color: #000000; transform: scale(1.05,1.05) /* css線性轉換工具：transform: scale(1,1)比例1:1 */
+}
+
+/* nav>.mobile-menu */
+nav>.mobile-menu{
+	position: fixed; left:0px; top: 0px; /* 定位模式: 固定於螢幕左上角 */
+	width: 100%; height: 100%;
+	background-color: rgba(255, 255, 255, 0.9);
+	text-align: center;
+	display: none;
+}
+nav>.mobile-menu>.item{
+	font-size: 0.8em;color: #222222;
+	padding-top: 30px;
+}
+nav>.mobile-menu>.close{
+	position: absolute; top: 10px; right: 10px;
+	cursor: pointer; /* 滑鼠游標呈手型 */
+}
+/* nav>.mobile-menu-trigger */
+nav>.mobile-menu-trigger{
+	display:none;justify-content:center;
+	margin-bottom:100px; /* 原memu為250px */
+}
+nav>.mobile-menu-trigger>.lines{
+	width:40px;
+}
+nav>.mobile-menu-trigger>.lines>.line{
+	height:2px;
+	background-color: black;
+	margin:8px 0px;
+}
+nav>.memo{
+    text-align: center; font-size: 3em;
+    line-height: 1.25em;
+    letter-spacing: 3px; /* 字元間距 */
+}
+/* 螢幕尺寸在800像素以下 */
+@media (max-width:800px){ 
+	nav{
+		height:600px; /* 原高度900px */
+		background-position:20% center; /*背景圖位移,靠左20% */
+	}
+	nav>.title{
+		padding:25px 0px;margin-bottom:40px;
+		/* 	原為：padding:40px 0px;margin-bottom:80px; */
+	}
+	nav>.menu{
+		display:none;
+	}
+	nav>.mobile-menu-trigger{
+		display:flex;
+	}
+	nav>.memo{
+		text-align:center;
+		font-size:2em; /* 原：font-size: 3em; */
+		letter-spacing:3px;
+		line-height:1.25em; /* 行高同原本設定 */
+	}
+}

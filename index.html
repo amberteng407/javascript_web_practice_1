@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <title>My Style</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <!-- 設定google fonts網站上的字型 -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.gstatic.com"> 
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet" />
+    <!-- 加上css外部樣式表：處理nav區塊 -->
+    <link rel="stylesheet" type="text/css" href="nav.css" />
+    <link rel="stylesheet" type="text/css" href="gallery.css" />
+    <link rel="stylesheet" type="text/css" href="article.css" />  
+</head>
+<body>
+    <nav> 
+        <!-- 1. 電腦版選單/主導覽頁: 三個區塊上下排列 -->
+        <div class="title">Fashion Diary</div>
+        <div class="menu">
+            <div class="item">Home</div>
+            <div class="item">About</div>
+            <div class="item">Blog</div>
+            <div class="item">Contact</div>
+        </div>
+        <!-- 2. 手機版選單 -->
+        <div id="mobile-menu" class="mobile-menu">
+            <div class="item">Home</div>
+            <div class="item">About</div>
+            <div class="item">Blog</div>
+            <div class="item">Contact</div>
+            <!-- 關閉選單介面 -->
+            <div onclick="closeMobileMenu();" class="close">X</div> 
+        </div>
+        <!-- 3. 手機版：漢堡菜單 -->
+        <div onclick="showMobileMenu();" class="mobile-menu-trigger">
+        <!-- 當使用者點擊漢堡選單, 呼叫showMobileMenu函式; 使用ID以便抓取函式 -->
+			<div class="lines">
+				<div class="line"></div>
+				<div class="line"></div>
+				<div class="line"></div>
+			</div>
+		</div>
+        <div class="memo">
+            STYLE IS A<br/>CHOICE.<br/>MAKE YOURS. 
+        </div>
+    </nav>
+    <!-- 語意標籤，同nav -->
+    <section class="gallery">
+        <!-- 先把畫面切成左右兩塊，再分上下兩塊 -->
+        <!-- 左邊區塊 -->
+        <div class="col">
+            <!-- 可以同時設定好幾個class -->
+            <div class="block picture picture-1">
+                <div class="words">
+                    <div class="title">Read</div>
+                    <div class="story">THE BLOG</div>
+                    <div class="action">
+                        <span class="btn">Read More</span>
+                    </div>
+                </div>
+            </div>
+            <div class="block text">
+                <div class="words">
+                    <div class="title">Hello</div>
+                    <div class="story">I'm Amber</div>
+                    <div class="action">
+                        <span class="btn">Read More</span>
+                    </div>
+                </div>
+            </div>
+        </div> 
+        <!-- 右邊區塊 -->
+        <div class="col">
+            <div class="block text">
+                <div class="words">
+                    <div class="title">Advertise with</div>
+                    <div class="story">Fashion Diva</div>
+                    <div class="action">
+                        <span class="btn">Read More</span>
+                    </div>
+                </div>
+            </div>
+            <div class="block picture picture-2">
+                <div class="words">
+                    <div class="title">Contribute</div>
+                    <div class="story">TO THE BLOG</div>
+                    <div class="action">
+                        <span class="btn">Read More</span>
+                    </div>
+                </div>
+            </div>           
+        </div> 
+    </section>
+    <section class="article">
+        <div class="row">
+            <div class="block picture picture-1"></div>
+            <div class="block content">
+                <div class="top">
+                    <div class="title">
+                        What I wore : Travel Edition
+                    </div>
+                    <div class="text">
+                        Create a blog post subtitle that summarizes your post in a few short, 
+                        punchy sentences and entices your audience to continue reading. Wel...
+                    </div>
+                </div>
+                <div class="down">
+                    <div class="bottom">
+                        <span class="view">85 views</span>
+                        <span class="comment">Write a comment</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="block picture picture-2"></div>
+            <div class="block content">
+                <div class="top">
+                    <div class="title">
+                        Picking the Perfect Booties for Yous
+                    </div>
+                    <div class="text">
+                        Create a blog post subtitle that summarizes your post in a few short, 
+                        punchy sentences and entices your audience to continue reading. Wel...
+                    </div>
+                </div>
+                <div class="down">
+                    <div class="bottom">
+                        <span class="view">85 views</span>
+                        <span class="comment">Write a comment</span>
+  
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>&copy; 2020 by Amber Teng</footer>
+    <!-- 將JavaScript程式檔案引入外部程式碼 -->
+    <script src="main.js"></script>
+</body>    
+</html>
